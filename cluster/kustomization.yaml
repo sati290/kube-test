@@ -1,7 +1,7 @@
 resources:
   - ../base/hello-world
   - ../base/podinfo
-  - ../base/kube-prometheus
+  - ../base/prometheus-operator
   - ../overlays/ingress-nginx
   - ../overlays/helm-operator
 
