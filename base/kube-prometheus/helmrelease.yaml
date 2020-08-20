@@ -7,4 +7,4 @@ spec:
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com
     name: prometheus
-    version: 3.2.0
+    version: 11.12.0
