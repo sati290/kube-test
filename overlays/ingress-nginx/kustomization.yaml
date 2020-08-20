@@ -1,5 +1,4 @@
 resources:
   - https://github.com/kubernetes/ingress-nginx/deploy/static/provider/cloud
-  - hpa.yaml
 
 namespace: default
