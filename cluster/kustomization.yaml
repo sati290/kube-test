@@ -2,6 +2,7 @@ resources:
   - ../base/hello-world
   - ../base/podinfo
   - ../overlays/ingress-nginx
+  - ../overlays/helm-operator
 
 patchesStrategicMerge:
   - |-
