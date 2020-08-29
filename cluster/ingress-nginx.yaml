@@ -10,5 +10,6 @@ spec:
     name: ingress-nginx
     version: 2.13.0
   values:
-    metrics:
-      enabled: true
+    controller:
+      metrics:
+        enabled: true
