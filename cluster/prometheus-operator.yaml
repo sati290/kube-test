@@ -9,3 +9,6 @@ spec:
     repository: https://kubernetes-charts.storage.googleapis.com
     name: prometheus-operator
     version: 9.3.1
+  values:
+    alertmanager:
+      enabled: false
