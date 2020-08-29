@@ -2,4 +2,5 @@ resources:
   - ../base/hello-world
   - ../base/podinfo
   - ../overlays/helm-operator
+  - ingress-nginx.yaml
 #  - prometheus-operator.yaml
