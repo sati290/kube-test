@@ -12,7 +12,7 @@ spec:
   values:
     controller:
       extraArgs:
-        metrics-per-host: false
+        metrics-per-host: "false"
       metrics:
         enabled: true
         serviceMonitor:
