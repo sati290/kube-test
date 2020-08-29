@@ -2,7 +2,7 @@ resources:
   - ../base/hello-world
   - ../base/podinfo
   - ../overlays/helm-operator
-  - prometheus-operator.yaml
+#  - prometheus-operator.yaml
 
 patchesStrategicMerge:
   - patch-nginx.yaml
