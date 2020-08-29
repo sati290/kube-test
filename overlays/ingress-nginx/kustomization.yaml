@@ -1,4 +1,0 @@
-resources:
-  - https://github.com/kubernetes/ingress-nginx/deploy/static/provider/cloud
-
-namespace: default
