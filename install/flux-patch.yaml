@@ -18,3 +18,4 @@ spec:
             - --git-user=sati290
             - --git-email=sati290@users.noreply.github.com
             - --git-url=git@github.com:sati290/kube-test
+            - --sync-garbage-collection

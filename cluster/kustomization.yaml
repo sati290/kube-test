@@ -1,21 +1,9 @@
 resources:
   - ../base/hello-world
   - ../base/podinfo
-  - ../base/prometheus-operator
   - ../overlays/ingress-nginx
   - ../overlays/helm-operator
+  - prometheus-operator.yaml
 
 patchesStrategicMerge:
-  - |-
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: ingress-nginx-controller
-    spec:
-      template:
-        spec:
-          containers:
-            - name: controller
-              resources:
-                requests:
-                  cpu: 250m
+  - patch-nginx.yaml

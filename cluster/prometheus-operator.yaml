@@ -5,6 +5,7 @@ metadata:
   namespace: default
 spec:
   chart:
+    releaseName: prometheus
     repository: https://kubernetes-charts.storage.googleapis.com
     name: prometheus-operator
     version: 9.3.1
