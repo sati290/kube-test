@@ -12,3 +12,6 @@ spec:
   values:
     alertmanager:
       enabled: false
+    grafana:
+      ingress:
+        enabled: true
