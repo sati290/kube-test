@@ -16,6 +16,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: flux
+  namespace: flux
 spec:
   selector:
     matchLabels:
