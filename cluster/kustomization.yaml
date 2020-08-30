@@ -2,5 +2,6 @@ resources:
   - ../base/hello-world
   - ../base/podinfo
   - ../overlays/helm-operator
-  - ingress-nginx.yaml
   - ../kube-prometheus/manifests
+  - flux-monitor.yaml
+  - ingress-nginx.yaml
