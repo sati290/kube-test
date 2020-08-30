@@ -3,4 +3,3 @@ resources:
   - ../base/podinfo
   - ../overlays/helm-operator
   - ingress-nginx.yaml
-  - prometheus-operator.yaml
