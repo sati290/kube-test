@@ -20,3 +20,4 @@ spec:
             - --git-url=git@github.com:sati290/kube-test
             - --sync-garbage-collection
             - --listen-metrics=:3031
+            - --registry-exclude-image=k8s.gcr.io/ingress-nginx/controller*
