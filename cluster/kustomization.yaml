@@ -3,3 +3,4 @@ resources:
   - ../base/podinfo
   - ../overlays/helm-operator
   - ingress-nginx.yaml
+  - ../kube-prometheus/manifests
