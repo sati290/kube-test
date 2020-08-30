@@ -7,8 +7,12 @@ local kp =
   {
     _config+:: {
       namespace: 'monitoring',
+      prometheus+:: {
+        replicas: 1
+      },
       alertmanager+:: {
         config: importstr 'alertmanager-config.yaml',
+        replicas: 1
       },
       grafana+:: {
         config: {  // http://docs.grafana.org/installation/configuration/
