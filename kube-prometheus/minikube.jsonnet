@@ -4,6 +4,7 @@ local kp =
   (import 'kube-prometheus/kube-prometheus-all-namespaces.libsonnet') +
   // Note that NodePort type services is likely not a good idea for your production use case, it is only used for demonstration purposes here.
   (import 'kube-prometheus/kube-prometheus-node-ports.libsonnet') +
+  (import 'kube-prometheus/kube-prometheus-thanos-sidecar.libsonnet') +
   {
     _config+:: {
       namespace: 'monitoring',
