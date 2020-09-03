@@ -1,3 +1,6 @@
+local k = import 'ksonnet/ksonnet.beta.3/k.libsonnet';
+local pvc = k.core.v1.persistentVolumeClaim;
+
 local kp =
   (import 'kube-prometheus/kube-prometheus.libsonnet') +
   (import 'kube-prometheus/kube-prometheus-kubeadm.libsonnet') +
@@ -9,7 +12,7 @@ local kp =
     _config+:: {
       namespace: 'monitoring',
       prometheus+:: {
-        replicas: 1
+        replicas: 1,
       },
       alertmanager+:: {
         config: importstr 'alertmanager-config.yaml',
@@ -40,6 +43,20 @@ local kp =
             // This 'cluster' label will be included on every firing prometheus alert. (This is more useful
             // when running multiple clusters in a shared environment (e.g. AWS) with other users.)
             cluster: 'minikube',
+          },
+
+          storage: {  // https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#storagespec
+            volumeClaimTemplate:  // (same link as above where the 'pvc' variable is defined)
+              pvc.new() +  // http://g.bryan.dev.hepti.center/core/v1/persistentVolumeClaim/#core.v1.persistentVolumeClaim.new
+
+              pvc.mixin.spec.withAccessModes('ReadWriteOnce') +
+
+              // https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.11/#resourcerequirements-v1-core (defines 'requests'),
+              // and https://kubernetes.io/docs/concepts/policy/resource-quotas/#storage-resource-quota (defines 'requests.storage')
+              pvc.mixin.spec.resources.withRequests({ storage: '10Gi' })
+
+              // A StorageClass of the following name (which can be seen via `kubectl get storageclass` from a node in the given K8s cluster) must exist prior to kube-prometheus being deployed.
+              //pvc.mixin.spec.withStorageClassName(''),
           },
         },
       },
