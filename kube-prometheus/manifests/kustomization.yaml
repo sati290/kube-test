@@ -39,8 +39,6 @@ resources:
 - node-exporter-serviceMonitor.yaml
 - prometheus-clusterRole.yaml
 - prometheus-clusterRoleBinding.yaml
-- prometheus-kubeControllerManagerPrometheusDiscoveryService.yaml
-- prometheus-kubeSchedulerPrometheusDiscoveryService.yaml
 - prometheus-prometheus.yaml
 - prometheus-roleBindingConfig.yaml
 - prometheus-roleBindingSpecificNamespaces.yaml
@@ -52,6 +50,4 @@ resources:
 - prometheus-serviceMonitor.yaml
 - prometheus-serviceMonitorApiserver.yaml
 - prometheus-serviceMonitorCoreDNS.yaml
-- prometheus-serviceMonitorKubeControllerManager.yaml
-- prometheus-serviceMonitorKubeScheduler.yaml
 - prometheus-serviceMonitorKubelet.yaml
