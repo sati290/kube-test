@@ -21,3 +21,7 @@ spec:
             - --sync-garbage-collection
             - --listen-metrics=:3031
             - --registry-exclude-image=k8s.gcr.io/ingress-nginx/controller*
+          resources:
+            limits:
+              cpu: 200m
+              memory: 512Mi
