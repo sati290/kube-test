@@ -7,7 +7,6 @@ local kp =
   (import 'kube-prometheus/kube-prometheus-all-namespaces.libsonnet') +
   // Note that NodePort type services is likely not a good idea for your production use case, it is only used for demonstration purposes here.
   (import 'kube-prometheus/kube-prometheus-node-ports.libsonnet') +
-  (import 'kube-prometheus/kube-prometheus-thanos-sidecar.libsonnet') +
   {
     _config+:: {
       namespace: 'monitoring',
@@ -44,6 +43,8 @@ local kp =
             // when running multiple clusters in a shared environment (e.g. AWS) with other users.)
             cluster: 'minikube',
           },
+
+          retention: '30d',
 
           storage: {  // https://github.com/coreos/prometheus-operator/blob/master/Documentation/api.md#storagespec
             volumeClaimTemplate:  // (same link as above where the 'pvc' variable is defined)

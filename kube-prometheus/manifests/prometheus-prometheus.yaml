@@ -22,6 +22,7 @@ spec:
   resources:
     requests:
       memory: 400Mi
+  retention: 30d
   ruleSelector:
     matchLabels:
       prometheus: k8s
@@ -43,10 +44,4 @@ spec:
         resources:
           requests:
             storage: 10Gi
-  thanos:
-    image: quay.io/thanos/thanos:v0.14.0
-    objectStorageConfig:
-      key: thanos.yaml
-      name: thanos-objectstorage
-    version: v0.14.0
   version: v2.20.0
